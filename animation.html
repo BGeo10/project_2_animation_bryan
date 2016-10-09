@@ -5,14 +5,60 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <svg width="80%" viewBox="0 0 200 400">
-      <rect x="100" y="390" width="20" height="5"/>
-      <rect x="95" y="345" width="5" height="40"/>
-      <rect x="120" y="345" width="5" height="40"/>
-      <rect x="107.5" y="345" width="5" height="40"/>
-      <polygon points="95,340 125,340 125,320 130,320 130,310 125,310 125,285 95,300 95,310 90,310 90,320 95,320"/>
-      <polygon points="120,288 100,298 100,40 120,40" fill="red"/>
-      <circle cx="110" cy="320" r="5" fill="yellow"/>
+    <svg width="80%" viewBox="0 0 220 400">
+    <rect x="100" y="390" width="20" height="5">
+      <animate attributeName="x" from="0" to="100" begin="transform.begin" dur="5s"/>
+    </rect>
+    <rect x="93" y="345" width="6.5" height="40">
+      <animate attributeName="x" from="-7" to="93" begin="transform.begin" dur="5s"/>
+    </rect>
+    <rect x="122" y="345" width="6" height="40">
+      <animate attributeName="x" from="22" to="122" begin="transform.begin" dur="5s"/>
+    </rect>
+    <rect x="107.5" y="345" width="6.5" height="40">
+      <animate attributeName="x" from="7.5" to="107.5" begin="transform.begin" dur="5s"/>
+    </rect>
+    <polygon points="95,260 115,260 115,265 125,265 125,260 125,240 130,240 130,230 125,230 125,205 95,220 95,230 90,230 90,240 95,240">
+      <animate attributeName="points" from="195,260 215,260 215,265 225,265 225,260 225,240 230,240 230,230 225,230 225,205 195,220 195,230 190,230 190,240 195,240" to="95,260 115,260 115,265 125,265 125,260 125,240 130,240 130,230 125,230 125,205 95,220 95,230 90,230 90,240 95,240" begin="click" dur="5s" id="transform"/>
+    </polygon>
+    <polygon points="120,208 100,218 100,15 110,0 120,15" fill="red" opacity="0">
+      <animate attributeName="fill" from="red" to="blue" begin="switch.end" dur="8s" id="blade"/>
+      <animate attributeName="fill" from="blue" to="green" begin="blade.end" dur="8s"/>
+      <animate attributeName="opacity" from="0" to="1" begin="transform.end" dur="5s"/>
+      <animate attributeName="opacity" from="1" to="1" begin="switch.end" dur="16s"/>
+    </polygon>
+    <polygon points="95,340 130,340 130,310 125,310 125,300 95,300">
+      <animate attributeName="points" from="195,340 230,340 230,310 225,310 225,300 195,300" to="95,340 130,340 130,310 125,310 125,300 95,300" begin="transform.begin" dur="5s"/>
+    </polygon>
+    <polygon points="95,300 125,300 125,265 115,265 115,260 95,260" fill="gray">
+      <animate attributeName="points" from="-5,300 75,300 75,265 -65,265 -65,260 -5,260" to="95,300 125,300 125,265 115,265 115,260 95,260" begin="transform.begin" dur="5s"/>
+    </polygon>
+    <circle cx="110" cy="320" r="5" fill="yellow">
+      <animate attributeName="fill" from="yellow" to="orange" begin="click" dur="0.1s" id="switch"/>
+      <animate attributeName="cx" from="210" to="110" begin="transform.begin" dur="5s"/>
+    </circle>
+    <line x1="103" y1="385.5" x2="103" y2="344.5" stroke="gray" stroke-width="9">
+      <animate attributeName="x1" from="3" to="103" begin="transform.begin" dur="5s"/>
+      <animate attributeName="x2" from="3" to="103" begin="transform.begin" dur="5s"/>
+    </line>
+    <line x1="118" y1="385.5" x2="118" y2="344.5" stroke="gray" stroke-width="9">
+      <animate attributeName="x1" from="18" to="118" begin="transform.begin" dur="5s"/>
+      <animate attributeName="x2" from="18" to="118" begin="transform.begin" dur="5s"/>
+    </line>
+    <rect x="95" y="340" width="30" height="5" fill="gray">
+      <animate attributeName="x" from="-5" to="95" begin="transform.begin" dur="5s"/>
+    </rect>
+    <rect x="95" y="385" width="30" height="5" fill="gray">
+      <animate attributeName="x" from="-5" to="95" begin="transform.begin" dur="5s"/>
+    </rect>
+    <rect x="100" y="270" width="5" height="25" fill="orange">
+      <animate attributeName="fill" from="orange" to="red" repeatCount="indefinite" dur="7s"/>
+      <animate attributeName="x" from="0" to="100" begin="transform.begin" dur="5s"/>
+    </rect>
+    <rect x="107" y="275" width="5" height="15" fill="brown">
+        <animate attributeName="x" from="7" to="107" begin="transform.begin" dur="5s"/>
+        <animate attributeName="fill" from="brown" to="blue" repeatCount="indefinite" dur="7s"/>
+    </rect>
     </svg>
   </body>
 </html>
